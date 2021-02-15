@@ -1,9 +1,6 @@
 import requests
 import xml.etree.ElementTree as ET
 
-# from ..classes import ipconn as i
-# x = i.Ipconn(name="a")
-
 def viewIPConnDefinition(host,port,authIn,context,scope,ipconnId):
     
     uri = "/CICSSystemManagement/CICSDefinitionIPICConnection/"+context+"/"+scope+"?CRITERIA=NAME="+ipconnId+"&PARAMETER=CSDGROUP(*)"

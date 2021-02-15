@@ -34,6 +34,7 @@ class Ipconn:
         """
         
         self.name = kwargs.get("name","")
+        self.description = kwargs.get("description","")
         self.csdgroup = kwargs.get("csdgroup","") 
         self.applid = kwargs.get("applid","") 
         self.networkid = kwargs.get("networkid","") 
@@ -51,7 +52,7 @@ class Ipconn:
         self.ssl = kwargs.get("ssl","NO") 
         self.certificate = kwargs.get("certificate","") 
         self.ciphers = kwargs.get("ciphers","") 
-        self.linkauth = kwargs.get("linkauth","SECUSER") 
+        self.linkauth = kwargs.get("linkauth","") 
         self.securityname = kwargs.get("securityname","") 
         self.userauth = kwargs.get("userauth","") 
         self.idprop = kwargs.get("idprop","") 
@@ -62,6 +63,7 @@ class Ipconn:
     def toXML(self):
         attributes = ET.Element('attributes')
         attributes.set('NAME',self.name)
+        attributes.set('DESCRIPTION',self.description)
         attributes.set('CSDGROUP',self.csdgroup)
         attributes.set('APPLID',self.applid)
         attributes.set('NETWORKID',self.networkid)
